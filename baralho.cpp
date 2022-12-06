@@ -1,6 +1,3 @@
-#include <algorithm>
-#include <random>
-#include <chrono>  
 #include "baralho.h"
 
 Baralho::Baralho()
@@ -21,7 +18,7 @@ void Baralho::MontaBaralho(int quantBaralhos)
 		{
 			for(char n : NaipesTipos)
 			{
-				cartas.push_back(make_tuple(c, n));
+				cartas.push_back(Carta(n, c));
 			}
 		}
 	}
@@ -44,7 +41,7 @@ void Baralho::ImprimeBaralho()
 
 void Baralho::ImprimeCarta(Carta c)
 {
-	printf("%c%c  ", get<0>(c), get<1>(c));
+	printf("%c%c  ", c.GetTipo(), c.GetNaipe());
 } 
  
 vector<Carta> Baralho::Distribuir(int quantCartas)

@@ -1,7 +1,3 @@
-#include <tuple>
-#include <vector>
-using namespace std;
-
 char NaipesTipos[4] =
 {
     'O', // Ouros
@@ -14,8 +10,6 @@ char CartasTipos[14]
 {
 	'A', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'V', 'D', 'R' 
 };
-
-typedef tuple<char, char> Carta;
 
 class Baralho
 {

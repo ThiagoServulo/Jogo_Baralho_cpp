@@ -1,4 +1,3 @@
-#include "baralho.h"
 
 class Jogador
 {
@@ -8,4 +7,5 @@ private:
 	
 public:
 	Jogador(int num);
+	int GetNumero();
 };
