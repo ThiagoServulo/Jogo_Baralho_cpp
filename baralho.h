@@ -20,6 +20,7 @@ private:
 public:
 	Baralho();
 	Baralho(int quantBaralhos);
+	Baralho(vector<Carta> c);
 	void ImprimeBaralho();
 	void ImprimeCarta(Carta c);
 	void Embaralhar();

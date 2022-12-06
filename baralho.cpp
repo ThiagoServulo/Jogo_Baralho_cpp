@@ -10,6 +10,11 @@ Baralho::Baralho(int quantBaralhos)
 	MontaBaralho(quantBaralhos);
 }
 
+Baralho::Baralho(vector<Carta> c)
+{
+	cartas = c;
+}
+
 void Baralho::MontaBaralho(int quantBaralhos)
 {
 	for(int i; i < quantBaralhos; i++)

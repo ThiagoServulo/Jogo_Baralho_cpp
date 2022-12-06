@@ -46,15 +46,17 @@ int main ()
 			// Lançar excessão;
 	}
 
-	for (auto j = jogadores.rbegin(); j != jogadores.rend(); ++j)
-	{
-		printf("\n%d", j->GetNumero());
-	}
-
 	Baralho bar1 = Baralho();
 	bar1.Embaralhar();
 	bar1.ImprimeBaralho();
-	vector<Carta> bar2 = bar1.Distribuir(1);
-	bar1.ImprimeCarta(bar2[0]); 
+	
+	for (auto j = jogadores.rbegin(); j != jogadores.rend(); ++j)
+	{
+		printf("\n%d", j->GetNumero());
+		j->IniciarMao(Baralho(bar1.Distribuir(5)));
+		j->ImprimirMao();
+	}
+
+
 	return 0;
 }
