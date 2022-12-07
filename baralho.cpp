@@ -37,17 +37,12 @@ void Baralho::Embaralhar()
 
 void Baralho::ImprimeBaralho()
 {
-	printf("\n\n");
+	printf("\n");
 	for(auto c: cartas)
 	{
-		ImprimeCarta(c);
+		c.ImprimeCarta();
 	}
 }
-
-void Baralho::ImprimeCarta(Carta c)
-{
-	printf("%c%c  ", c.GetTipo(), c.GetNaipe());
-} 
  
 vector<Carta> Baralho::Distribuir(int quantCartas)
 {
@@ -70,6 +65,16 @@ Carta Baralho::RetirarCarta(int posicao)
 {
 	--posicao;
 	Carta c = cartas[posicao];
-	cartas.erase (cartas.begin() + posicao);
+	cartas.erase(cartas.begin() + posicao);
 	return c;
+}
+
+void Baralho::AdicionarCarta(Carta c)
+{
+	cartas.push_back(c);
+}
+
+void Baralho::ExcluirTodasCartas()
+{
+	cartas.clear();
 }
