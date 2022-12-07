@@ -71,7 +71,7 @@ void Burro::InicializaJogadores()
 			// Lançar excessão;
 	}
 	
-		// Iniciar mao dos jogadores
+	// Iniciar mao dos jogadores
 	for (auto j = jogadores.rbegin(); j != jogadores.rend(); ++j)
 	{
 		j->IniciarMao(Baralho(cartas.Distribuir(5)));

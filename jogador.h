@@ -12,4 +12,5 @@ public:
 	void IniciarMao(Baralho b);
 	void ImprimirMao();
 	Carta JogarCarta(int posicao);
+	int EscolherCartaParaJogar();
 };

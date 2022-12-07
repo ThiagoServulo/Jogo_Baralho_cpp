@@ -78,3 +78,9 @@ void Baralho::ExcluirTodasCartas()
 {
 	cartas.clear();
 }
+
+bool Baralho::EscolherCarta(int posicao)
+{
+	--posicao;
+	return (posicao < 0 || posicao >= QuantidadeCartas()) ? false : true;
+}

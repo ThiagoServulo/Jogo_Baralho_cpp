@@ -1,5 +1,5 @@
 using namespace std;
-
+#include <cstddef> 
 #include <algorithm>
 #include <random>
 #include <chrono>  
@@ -44,10 +44,8 @@ int main ()
 		mesa.Imprimir();
 		printf("\nVez do Jogador %d", numeroJogadorAtual);
 		printf("\nSuas cartas:");
-		jogadores[partidaBurro.GetRodadas() - numeroJogadorAtual].ImprimirMao();
-		printf("\nEscolha uma carta de acordo com a posicao (1 a %d): ", 
-			jogadores[partidaBurro.GetQuantidadeJogadores() - numeroJogadorAtual].GetMao().QuantidadeCartas());
-		scanf("%d", &posicaoCarta);
+		jogadores[partidaBurro.GetQuantidadeJogadores() - numeroJogadorAtual].ImprimirMao();
+		posicaoCarta = jogadores[partidaBurro.GetQuantidadeJogadores() - numeroJogadorAtual].EscolherCartaParaJogar();
 		Carta c = jogadores[partidaBurro.GetQuantidadeJogadores() - numeroJogadorAtual].JogarCarta(posicaoCarta);
 		mesa.AdicionarCarta(c);
 		
@@ -60,7 +58,7 @@ int main ()
 		system("pause");
 #endif
 
-		break;
+		//break;
 	}
 	return 0;
 }
