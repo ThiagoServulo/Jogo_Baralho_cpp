@@ -8,6 +8,8 @@ private:
 public:
 	Jogador(int num);
 	int GetNumero();
+	Baralho GetMao();
 	void IniciarMao(Baralho b);
 	void ImprimirMao();
+	Carta JogarCarta(int posicao);
 };

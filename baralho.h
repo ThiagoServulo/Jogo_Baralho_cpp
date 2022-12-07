@@ -26,4 +26,5 @@ public:
 	void Embaralhar();
 	vector<Carta> Distribuir(int quantCartas);
 	int QuantidadeCartas();
+	Carta RetirarCarta(int posicao);
 };

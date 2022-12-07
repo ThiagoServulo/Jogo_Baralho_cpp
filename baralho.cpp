@@ -66,3 +66,10 @@ int Baralho::QuantidadeCartas()
 	return cartas.size();
 }
 
+Carta Baralho::RetirarCarta(int posicao)
+{
+	--posicao;
+	Carta c = cartas[posicao];
+	cartas.erase (cartas.begin() + posicao);
+	return c;
+}
