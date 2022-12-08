@@ -36,9 +36,14 @@ int Jogador::EscolherCartaParaJogar()
 	
 	do
 	{
-		printf("\nEscolha uma carta de acordo com a posicao (1 a %d): ", Mao.QuantidadeCartas());
+		printf("\nEscolha uma carta de acordo com a posicao (1 a %d): ", QuantidadeCartasMao());
 		scanf("%d", &posicao);
 	}while(!Mao.EscolherCarta(posicao));
 	
 	return posicao;
+}
+
+int Jogador::QuantidadeCartasMao()
+{
+	return Mao.QuantidadeCartas();
 }

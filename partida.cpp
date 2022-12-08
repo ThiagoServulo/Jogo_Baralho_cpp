@@ -34,7 +34,6 @@ int main ()
 	system("pause");
 #endif 
 
-	int numeroJogadorAtual = 1;
 	int posicaoCarta = 0;
 	
 	while(true)
@@ -42,22 +41,22 @@ int main ()
 		system("cls");
 		printf("\n**********Rodada %d**********", partidaBurro.GetRodadas());
 		mesa.Imprimir();
-		printf("\nVez do Jogador %d", numeroJogadorAtual);
+		printf("\nVez do Jogador %d", partidaBurro.GetNumeroJogadorAtual() +  1);
 		printf("\nSuas cartas:");
-		jogadores[partidaBurro.GetQuantidadeJogadores() - numeroJogadorAtual].ImprimirMao();
-		posicaoCarta = jogadores[partidaBurro.GetQuantidadeJogadores() - numeroJogadorAtual].EscolherCartaParaJogar();
-		Carta c = jogadores[partidaBurro.GetQuantidadeJogadores() - numeroJogadorAtual].JogarCarta(posicaoCarta);
+		jogadores[partidaBurro.GetNumeroJogadorAtual()].ImprimirMao();
+		posicaoCarta = jogadores[partidaBurro.GetNumeroJogadorAtual()].EscolherCartaParaJogar();
+		Carta c = jogadores[partidaBurro.GetNumeroJogadorAtual()].JogarCarta(posicaoCarta);
 		mesa.AdicionarCarta(c);
 		
 #ifdef LOG_PROGRAM
 		printf("\nCarta escolhida pelo jogador: ");
 		c.ImprimeCarta();
 		printf("\nMao do jogador apos a rodada: ");
-		jogadores[partidaBurro.GetQuantidadeJogadores() - numeroJogadorAtual].ImprimirMao();
+		jogadores[partidaBurro.GetNumeroJogadorAtual()].ImprimirMao();
 		printf("\n");
 		system("pause");
 #endif
-
+		partidaBurro.MudaJogadorAtual();
 		//break;
 	}
 	return 0;

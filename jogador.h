@@ -13,4 +13,5 @@ public:
 	void ImprimirMao();
 	Carta JogarCarta(int posicao);
 	int EscolherCartaParaJogar();
+	int QuantidadeCartasMao();
 };

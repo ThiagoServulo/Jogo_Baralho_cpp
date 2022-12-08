@@ -71,8 +71,10 @@ void Burro::InicializaJogadores()
 			// Lançar excessão;
 	}
 	
+	reverse(jogadores.begin(), jogadores.end());
+	
 	// Iniciar mao dos jogadores
-	for (auto j = jogadores.rbegin(); j != jogadores.rend(); ++j)
+	for (auto j = jogadores.begin(); j != jogadores.end(); ++j)
 	{
 		j->IniciarMao(Baralho(cartas.Distribuir(5)));
 		
@@ -84,4 +86,19 @@ void Burro::InicializaJogadores()
 		system("pause");
 #endif
 	}
+}
+
+void Burro::MudaJogadorAtual()
+{
+       jogadorAtual = jogadorAtual == (quantidadeJogadores - 1) ? 0 : ++jogadorAtual;
+}
+
+void Burro::SetJogadorAtual(int numeroJogador)
+{
+       jogadorAtual = numeroJogador;
+}
+
+int Burro::GetNumeroJogadorAtual()
+{
+       return jogadorAtual;
 }
