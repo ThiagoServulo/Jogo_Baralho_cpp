@@ -51,6 +51,7 @@ int main ()
 #ifdef LOG_PROGRAM
 		printf("\nCarta escolhida pelo jogador: ");
 		c.ImprimeCarta();
+		printf("\nQuantidade de cartas: %d", jogadores[partidaBurro.GetNumeroJogadorAtual()].QuantidadeCartasMao());
 		printf("\nMao do jogador apos a rodada: ");
 		jogadores[partidaBurro.GetNumeroJogadorAtual()].ImprimirMao();
 		printf("\n");

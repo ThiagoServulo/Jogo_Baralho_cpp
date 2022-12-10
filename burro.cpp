@@ -90,15 +90,15 @@ void Burro::InicializaJogadores()
 
 void Burro::MudaJogadorAtual()
 {
-       jogadorAtual = jogadorAtual == (quantidadeJogadores - 1) ? 0 : ++jogadorAtual;
+	jogadorAtual = jogadorAtual == (quantidadeJogadores - 1) ? 0 : ++jogadorAtual;
 }
 
 void Burro::SetJogadorAtual(int numeroJogador)
 {
-       jogadorAtual = numeroJogador;
+	jogadorAtual = numeroJogador;
 }
 
 int Burro::GetNumeroJogadorAtual()
 {
-       return jogadorAtual;
+	return jogadorAtual;
 }

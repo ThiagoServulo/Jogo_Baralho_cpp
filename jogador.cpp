@@ -17,6 +17,7 @@ Baralho Jogador::GetMao()
 
 void Jogador::IniciarMao(Baralho b)
 {
+	quantidadeCartas = b.QuantidadeCartas();
 	Mao = b;
 }
 
@@ -27,6 +28,7 @@ void Jogador::ImprimirMao()
 
 Carta Jogador::JogarCarta(int posicao)
 {
+	--quantidadeCartas;
 	return Mao.RetirarCarta(posicao);
 }
 
@@ -45,5 +47,5 @@ int Jogador::EscolherCartaParaJogar()
 
 int Jogador::QuantidadeCartasMao()
 {
-	return Mao.QuantidadeCartas();
+	return quantidadeCartas;
 }

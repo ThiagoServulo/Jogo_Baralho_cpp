@@ -3,6 +3,7 @@ class Jogador
 {
 private:
 	int numJogador;
+	int quantidadeCartas;
 	Baralho Mao;
 	
 public:
