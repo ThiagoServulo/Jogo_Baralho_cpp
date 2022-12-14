@@ -102,3 +102,13 @@ int Burro::GetNumeroJogadorAtual()
 {
 	return jogadorAtual;
 }
+
+void Burro::IncrementaRodada()
+{
+    ++rodadas;
+}
+
+bool Burro::ChecaFimRodada()
+{
+	return (rodadas % quantidadeJogadores) == 0;
+}

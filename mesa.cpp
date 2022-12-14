@@ -21,3 +21,8 @@ void Mesa::Limpar()
 {
 	cartas.ExcluirTodasCartas();
 }
+
+int Mesa::QuantidadeCartas()
+{
+	return cartas.QuantidadeCartas();
+}

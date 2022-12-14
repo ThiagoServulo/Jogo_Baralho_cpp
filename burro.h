@@ -20,4 +20,6 @@ public:
 	void MudaJogadorAtual();
 	void SetJogadorAtual(int numeroJogador);
 	int GetNumeroJogadorAtual();
+	void IncrementaRodada();
+	bool ChecaFimRodada();
 };

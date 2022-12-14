@@ -8,4 +8,5 @@ public:
 	void Imprimir();
 	void AdicionarCarta(Carta c);
 	void Limpar();
+	int QuantidadeCartas();
 };
