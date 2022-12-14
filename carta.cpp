@@ -1,18 +1,5 @@
 #include "carta.h"
 
-char Naipes[4] =
-{
-    'O', // Ouros
-    'C', // Copas
-    'E', // Espadas
-    'P'  // Paus
-};
-
-char Tipos[14]
-{
-	'1', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'V', 'D', 'R', 'A'
-};
-
 Carta::Carta()
 {
 	
@@ -26,6 +13,8 @@ Carta::Carta(char n, char t)
 
 bool Carta::operator > (const Carta & c)
 {
+	return find(Tipos.begin(), Tipos.end(), tipo) > find(Tipos.begin(), Tipos.end(), c.tipo);
+	/*
 	for(int i = 0; i < 14; i++)
 	{
 		if(c.tipo == Tipos[i])
@@ -37,11 +26,11 @@ bool Carta::operator > (const Carta & c)
 		{
 			return true;
 		}
-	}
-	
+	}*/
+	/*
 	// Lançar Excessão
 	printf("\nERRO");
-	return false;
+	return false;*/
 }
 
 void Carta::ImprimeCarta()

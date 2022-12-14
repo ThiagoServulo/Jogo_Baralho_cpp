@@ -6,6 +6,7 @@ using namespace std;
 #include <tuple>
 #include <vector>
 #include <iostream>
+#include "utils.h"
 #include "carta.cpp"
 #include "baralho.cpp"
 #include "jogador.cpp"
@@ -76,14 +77,8 @@ int main ()
 		}
 		else
 		{
-			printf("\nxxxxx\n");
-			c.ImprimeCarta();
-			maiorCarta.ImprimeCarta();
-			printf("\n");
-			system("pause");
-			if(!(maiorCarta > c))
+			if(c > maiorCarta)
 			{
-				printf("\nzzzzzzzz\n");
 				maiorCarta = c;
 				jogadorMaiorCarta = partidaBurro.GetNumeroJogadorAtual();
 			}
@@ -94,6 +89,7 @@ int main ()
 			mesa.Limpar();
 			printf("\nO jogador %d venceu a rodada\n", jogadorMaiorCarta + 1);
 			system("pause");
+			partidaBurro.SetJogadorAtual(jogadorMaiorCarta);
 		}
 		else
 		{

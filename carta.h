@@ -6,8 +6,6 @@ private:
 	char tipo;
 	
 public:
-	char Tipos[14];
-	char Naipes[4];
 	Carta(char n, char t);
 	Carta();
 	bool operator > (const Carta & c);

@@ -19,9 +19,9 @@ void Baralho::MontaBaralho(int quantBaralhos)
 {
 	for(int i; i < quantBaralhos; i++)
 	{
-		for(char c : CartasTipos)
+		for(char c : Tipos)
 		{
-			for(char n : NaipesTipos)
+			for(char n : Naipes)
 			{
 				cartas.push_back(Carta(n, c));
 			}
