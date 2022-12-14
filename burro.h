@@ -19,7 +19,8 @@ public:
 	void InicializaJogadores();
 	void MudaJogadorAtual();
 	void SetJogadorAtual(int numeroJogador);
-	int GetNumeroJogadorAtual();
 	void IncrementaRodada();
 	bool ChecaFimRodada();
+	bool ChecaFimJogo();
+	void LoopPartida();
 };

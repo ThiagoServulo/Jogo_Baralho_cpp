@@ -98,11 +98,6 @@ void Burro::SetJogadorAtual(int numeroJogador)
 	jogadorAtual = numeroJogador;
 }
 
-int Burro::GetNumeroJogadorAtual()
-{
-	return jogadorAtual;
-}
-
 void Burro::IncrementaRodada()
 {
     ++rodadas;
@@ -111,4 +106,84 @@ void Burro::IncrementaRodada()
 bool Burro::ChecaFimRodada()
 {
 	return (rodadas % quantidadeJogadores) == 0;
+}
+
+bool Burro::ChecaFimJogo()
+{
+	return ((jogadores[jogadorAtual].QuantidadeCartasMao() == 0) || (mesa.QuantidadeCartas() == 0));
+}
+
+#define LOG_PROGRAM
+
+void Burro::LoopPartida()
+{
+#ifdef LOG_PROGRAM
+	cartas.ImprimeBaralho(); 
+	printf("\n");
+	system("pause");
+#endif 
+
+	int posicaoCarta = 0;
+	int jogadorMaiorCarta = 0;
+	Carta maiorCarta;
+	
+	while(true)
+	{
+		system("cls");
+		printf("\n**********Rodada %d**********", rodadas);
+		mesa.Imprimir();
+		printf("\nVez do Jogador %d", jogadorAtual +  1);
+		printf("\nSuas cartas:");
+		jogadores[jogadorAtual].ImprimirMao();
+		posicaoCarta = jogadores[jogadorAtual].EscolherCartaParaJogar();
+		Carta c = jogadores[jogadorAtual].JogarCarta(posicaoCarta);
+		mesa.AdicionarCarta(c);
+		
+#ifdef LOG_PROGRAM
+		printf("\nCarta escolhida pelo jogador: ");
+		c.ImprimeCarta();
+		printf("\nQuantidade de cartas: %d", jogadores[jogadorAtual].QuantidadeCartasMao());
+		printf("\nQuantidade de cartas na mesa: %d", mesa.QuantidadeCartas());
+		printf("\nMao do jogador apos a rodada: ");
+		jogadores[jogadorAtual].ImprimirMao();
+		printf("\n");
+		system("pause");
+#endif
+
+		if (ChecaFimJogo())
+		{
+			system("cls");
+			printf("\nFim de jogo");
+			printf("\nVencedor: Jogador %d", jogadorAtual +  1);
+			break;
+		}
+		
+		if(mesa.QuantidadeCartas() == 1)
+		{
+			jogadorMaiorCarta = jogadorAtual;
+			maiorCarta = c;
+		}
+		else
+		{
+			if(c > maiorCarta)
+			{
+				maiorCarta = c;
+				jogadorMaiorCarta = jogadorAtual;
+			}
+		}
+		
+		if(ChecaFimRodada())
+		{
+			mesa.Limpar();
+			printf("\nO jogador %d venceu a rodada\n", jogadorMaiorCarta + 1);
+			system("pause");
+			SetJogadorAtual(jogadorMaiorCarta);
+		}
+		else
+		{
+			MudaJogadorAtual();
+		}
+	
+		IncrementaRodada();
+	}
 }
