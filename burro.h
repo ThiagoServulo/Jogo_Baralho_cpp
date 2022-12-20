@@ -22,5 +22,8 @@ public:
 	void IncrementaRodada();
 	bool ChecaFimRodada();
 	bool ChecaFimJogo();
+	Carta ComprarCartaDoBaralho();
 	void LoopPartida();
+	void FimDeJogo(int vencedor);
+	int JogadorComMenosCartas();
 };

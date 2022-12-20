@@ -16,4 +16,5 @@ public:
 	int EscolherCartaParaJogar(char naipeMesa);
 	int QuantidadeCartasMao();
 	bool CartaDisponivel(char naipeMesa);
+	void AdicionarCartaNaMao(Carta c);
 };

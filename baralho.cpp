@@ -63,9 +63,20 @@ int Baralho::QuantidadeCartas()
 
 Carta Baralho::RetirarCarta(int posicao)
 {
-	--posicao;
-	Carta c = cartas[posicao];
-	cartas.erase(cartas.begin() + posicao);
+	Carta c;
+	
+	if(posicao == -1) // última carta
+	{
+		c = cartas.back();
+		cartas.pop_back();
+	}
+	else
+	{	
+		--posicao;
+		c = cartas[posicao];
+		cartas.erase(cartas.begin() + posicao);
+	}
+	
 	return c;
 }
 

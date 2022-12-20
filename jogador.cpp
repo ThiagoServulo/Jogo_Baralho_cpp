@@ -23,6 +23,7 @@ void Jogador::IniciarMao(Baralho b)
 
 void Jogador::ImprimirMao()
 {
+	printf("\nSuas cartas:");
 	Mao.ImprimeBaralho();
 }
 
@@ -70,4 +71,10 @@ bool Jogador::CartaDisponivel(char naipeMesa)
 	}
 	
 	return false;
+}
+
+void Jogador::AdicionarCartaNaMao(Carta c)
+{
+	++quantidadeCartas;
+	Mao.AdicionarCarta(c);
 }
