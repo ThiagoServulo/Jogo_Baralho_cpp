@@ -16,4 +16,5 @@ public:
 	void AdicionarCarta(Carta c);
 	void ExcluirTodasCartas();
 	bool EscolherCarta(int posicao);
+	Carta AcessarCarta(int posicao);
 };

@@ -7,3 +7,25 @@ vector<char> Naipes =
     'E', // Espadas
     'P'  // Paus
 };
+
+// Defines de LOG
+//#define DEBUG_Burro_LoopPartida            
+//#define DEBUG_Burro_InicializaJogadores    
+//#define DEBUG_Jogador_EscolherCartaParaJogar
+
+void Wait()
+{
+	printf("\n");
+	system("pause");
+}
+
+void PrintAndWait(char * msg)
+{
+	puts(msg);
+	Wait();
+}
+
+void LimparTerminal()
+{
+	system("cls");
+}

@@ -84,3 +84,9 @@ bool Baralho::EscolherCarta(int posicao)
 	--posicao;
 	return (posicao < 0 || posicao >= QuantidadeCartas()) ? false : true;
 }
+
+Carta Baralho::AcessarCarta(int posicao)
+{
+	--posicao;
+	return cartas[posicao];
+}

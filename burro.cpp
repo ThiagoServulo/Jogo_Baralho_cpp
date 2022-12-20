@@ -36,9 +36,9 @@ vector<Jogador> Burro::GetJogadores()
 
 void Burro::ConfiguraJogo()
 {
-	// Lendo a quantidade de jogadores
 	while(true)
 	{
+		// Lendo a quantidade de jogadores
 		printf("Escolha a quantidade de jogadores (entre 2 e 4): ");
 		scanf("%d", &quantidadeJogadores);
 		if(quantidadeJogadores >= 2 && quantidadeJogadores <= 4)
@@ -46,11 +46,10 @@ void Burro::ConfiguraJogo()
 			InicializaJogadores();
 			break;
 		}
-		system("cls");
+		LimparTerminal();
 	}
 }
 
-#define DEBUG_InicializaJogadores
 void Burro::InicializaJogadores()
 {
 	switch(quantidadeJogadores)
@@ -78,13 +77,13 @@ void Burro::InicializaJogadores()
 	{
 		j->IniciarMao(Baralho(cartas.Distribuir(5)));
 		
-#ifdef DEBUG_InicializaJogadores
+#ifdef DEBUG_Burro_InicializaJogadores
 		printf("\nJogador: %d", j->GetNumero());
 		printf("\nMao Inicial: ");
 		j->ImprimirMao();
-		printf("\n");
-		system("pause");
+		Wait();
 #endif
+
 	}
 }
 
@@ -113,14 +112,12 @@ bool Burro::ChecaFimJogo()
 	return ((jogadores[jogadorAtual].QuantidadeCartasMao() == 0) || (mesa.QuantidadeCartas() == 0));
 }
 
-#define LOG_PROGRAM
 
 void Burro::LoopPartida()
 {
-#ifdef LOG_PROGRAM
+#ifdef DEBUG_Burro_LoopPartida
 	cartas.ImprimeBaralho(); 
-	printf("\n");
-	system("pause");
+	Wait();
 #endif 
 
 	int posicaoCarta = 0;
@@ -129,30 +126,33 @@ void Burro::LoopPartida()
 	
 	while(true)
 	{
-		system("cls");
+		LimparTerminal();
 		printf("\n**********Rodada %d**********", rodadas);
 		mesa.Imprimir();
 		printf("\nVez do Jogador %d", jogadorAtual +  1);
 		printf("\nSuas cartas:");
 		jogadores[jogadorAtual].ImprimirMao();
-		posicaoCarta = jogadores[jogadorAtual].EscolherCartaParaJogar();
+		if(!jogadores[jogadorAtual].CartaDisponivel(mesa.GetNaipe()))
+		{
+			printf("\naaaaaaaaa");
+		}
+		posicaoCarta = jogadores[jogadorAtual].EscolherCartaParaJogar(mesa.GetNaipe());
 		Carta c = jogadores[jogadorAtual].JogarCarta(posicaoCarta);
 		mesa.AdicionarCarta(c);
 		
-#ifdef LOG_PROGRAM
+#ifdef DEBUG_Burro_LoopPartida
 		printf("\nCarta escolhida pelo jogador: ");
 		c.ImprimeCarta();
 		printf("\nQuantidade de cartas: %d", jogadores[jogadorAtual].QuantidadeCartasMao());
 		printf("\nQuantidade de cartas na mesa: %d", mesa.QuantidadeCartas());
 		printf("\nMao do jogador apos a rodada: ");
 		jogadores[jogadorAtual].ImprimirMao();
-		printf("\n");
-		system("pause");
+		Wait();
 #endif
 
 		if (ChecaFimJogo())
 		{
-			system("cls");
+			LimparTerminal();
 			printf("\nFim de jogo");
 			printf("\nVencedor: Jogador %d", jogadorAtual +  1);
 			break;
@@ -176,7 +176,7 @@ void Burro::LoopPartida()
 		{
 			mesa.Limpar();
 			printf("\nO jogador %d venceu a rodada\n", jogadorMaiorCarta + 1);
-			system("pause");
+			Wait();
 			SetJogadorAtual(jogadorMaiorCarta);
 		}
 		else

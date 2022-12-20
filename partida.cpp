@@ -12,7 +12,7 @@ using namespace std;
 #include "jogador.cpp"
 #include "mesa.cpp"
 #include "burro.cpp"
-
+ 
 
 int main ()
 {

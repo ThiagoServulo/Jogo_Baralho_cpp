@@ -9,4 +9,5 @@ public:
 	void AdicionarCarta(Carta c);
 	void Limpar();
 	int QuantidadeCartas();
+	char GetNaipe();
 };

@@ -13,6 +13,7 @@ public:
 	void IniciarMao(Baralho b);
 	void ImprimirMao();
 	Carta JogarCarta(int posicao);
-	int EscolherCartaParaJogar();
+	int EscolherCartaParaJogar(char naipeMesa);
 	int QuantidadeCartasMao();
+	bool CartaDisponivel(char naipeMesa);
 };

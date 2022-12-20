@@ -26,3 +26,8 @@ int Mesa::QuantidadeCartas()
 {
 	return cartas.QuantidadeCartas();
 }
+
+char Mesa::GetNaipe()
+{
+	return cartas.QuantidadeCartas() == 0 ? ' ' : cartas.AcessarCarta(1).GetNaipe();
+}
