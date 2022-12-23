@@ -6,6 +6,8 @@ using namespace std;
 #include <tuple>
 #include <vector>
 #include <iostream>
+#include <windows.h>
+#include <stdio.h>
 #include "utils.h"
 #include "carta.cpp"
 #include "baralho.cpp"
@@ -21,4 +23,4 @@ int main ()
 	partidaBurro.LoopPartida();
 
 	return 0;
-}
+} 

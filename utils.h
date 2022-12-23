@@ -13,6 +13,11 @@ vector<char> Naipes =
 //#define DEBUG_Burro_InicializaJogadores    
 //#define DEBUG_Jogador_EscolherCartaParaJogar
 
+// Defines de Cores
+#define DEFAULT      15
+#define BLACK_CARDS  112
+#define RED_CARDS    116
+
 void Wait()
 {
 	printf("\n");

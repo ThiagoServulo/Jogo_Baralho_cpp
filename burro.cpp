@@ -156,11 +156,12 @@ void Burro::LoopPartida()
 	while(true)
 	{
 		LimparTerminal();
-		printf("\n**********Rodada %d**********", rodadas);
+		printf("\n----------------Rodada %d----------------------", rodadas);
 		printf("\nQuantidade de cartas na mesa: %d", cartas.QuantidadeCartas());
 		mesa.Imprimir();
 		printf("\nVez do Jogador %d", jogadorAtual +  1);
 		jogadores[jogadorAtual].ImprimirMao();
+		int cartasCompradas = 0;
 		while(!jogadores[jogadorAtual].CartaDisponivel(mesa.GetNaipe()))
 		{
 			if(cartas.QuantidadeCartas() == 0)
@@ -169,14 +170,27 @@ void Burro::LoopPartida()
 				return;
 			}
 			
+			if(cartasCompradas == 0)
+			{
+				printf("\nVoce nao tem cartas desse naipe: hora de comprar");
+				Wait();
+			}
+			
 			Carta cartaComprada = ComprarCartaDoBaralho();
 			jogadores[jogadorAtual].AdicionarCartaNaMao(cartaComprada);
 #ifdef DEBUG_Burro_LoopPartida
 			printf("\nComprando carta: ");
 			cartaComprada.ImprimeCarta();
 #endif
+			++cartasCompradas;
+		}
+		
+		if(cartasCompradas != 0)
+		{
+			printf("\nVoce comprou %d cartas", cartasCompradas);
 			jogadores[jogadorAtual].ImprimirMao();
 		}
+		
 		posicaoCarta = jogadores[jogadorAtual].EscolherCartaParaJogar(mesa.GetNaipe());
 		Carta c = jogadores[jogadorAtual].JogarCarta(posicaoCarta);
 		mesa.AdicionarCarta(c);

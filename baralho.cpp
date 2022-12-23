@@ -41,6 +41,7 @@ void Baralho::ImprimeBaralho()
 	for(auto c: cartas)
 	{
 		c.ImprimeCarta();
+		printf("  ");
 	}
 }
  

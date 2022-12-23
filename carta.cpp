@@ -18,7 +18,9 @@ bool Carta::operator > (const Carta & c)
 
 void Carta::ImprimeCarta()
 {
-	printf("%c%c  ", tipo, naipe);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (naipe == 'O' || naipe == 'C') ? RED_CARDS : BLACK_CARDS);
+	printf("%c%c", tipo, naipe);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), DEFAULT);
 } 
 
 char Carta::GetNaipe()
