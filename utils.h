@@ -8,6 +8,9 @@ vector<char> Naipes =
     'P'  // Paus
 };
 
+//Macros
+#define MAX_JOGADORES   4
+
 // Defines de LOG
 //#define DEBUG_Burro_LoopPartida            
 //#define DEBUG_Burro_InicializaJogadores    

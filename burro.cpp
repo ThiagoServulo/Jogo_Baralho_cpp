@@ -160,7 +160,6 @@ void Burro::FinalizarRodada(int jogadorVencedorDaRodada)
 	printf("\nO jogador %d venceu a rodada\n", jogadorVencedorDaRodada + 1);
 	Wait();
 	SetJogadorAtual(jogadorVencedorDaRodada);
-	IncrementaRodada();
 }
 
 void Burro::LoopPartida()
@@ -212,7 +211,7 @@ void Burro::LoopPartida()
 		
 		posicaoCarta = jogadores[jogadorAtual].EscolherCartaParaJogar(mesa.GetNaipe());
 		Carta c = jogadores[jogadorAtual].JogarCarta(posicaoCarta);
-		mesa.AdicionarCarta(c);
+		mesa.AdicionarCarta(c, jogadorAtual);
 		
 #ifdef DEBUG_Burro_LoopPartida
 		printf("\nCarta escolhida pelo jogador: ");
@@ -252,6 +251,7 @@ void Burro::LoopPartida()
 		{
 			MudaJogadorAtual();
 		}
-	
+		
+		IncrementaRodada();
 	}
 }
