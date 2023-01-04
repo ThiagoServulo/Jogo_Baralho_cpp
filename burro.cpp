@@ -122,6 +122,10 @@ void Burro::FimDeJogo(int vencedor)
 {
 	LimparTerminal();
 	printf("\nFim de jogo");
+	for (auto j = jogadores.begin(); j != jogadores.end(); ++j)
+	{	
+		printf("\nJogador: %d. Quantidade de cartas: %d", j->GetNumero(), j->QuantidadeCartasMao());
+	}
 	printf("\nVencedor: Jogador %d", vencedor);
 }
 
@@ -142,6 +146,23 @@ int Burro::JogadorComMenosCartas()
 	return jogadorMenosCartas;
 }
 
+void Burro::ImprimirMesa()
+{
+	LimparTerminal();
+	printf("\n----------------Rodada %d----------------------", rodadas);
+	printf("\nQuantidade de cartas na compra: %d", cartas.QuantidadeCartas());
+	mesa.Imprimir();
+}
+
+void Burro::FinalizarRodada(int jogadorVencedorDaRodada)
+{
+	ImprimirMesa();
+	printf("\nO jogador %d venceu a rodada\n", jogadorVencedorDaRodada + 1);
+	Wait();
+	SetJogadorAtual(jogadorVencedorDaRodada);
+	IncrementaRodada();
+}
+
 void Burro::LoopPartida()
 {
 #ifdef DEBUG_Burro_LoopPartida
@@ -155,10 +176,7 @@ void Burro::LoopPartida()
 	
 	while(true)
 	{
-		LimparTerminal();
-		printf("\n----------------Rodada %d----------------------", rodadas);
-		printf("\nQuantidade de cartas na mesa: %d", cartas.QuantidadeCartas());
-		mesa.Imprimir();
+		ImprimirMesa();
 		printf("\nVez do Jogador %d", jogadorAtual +  1);
 		jogadores[jogadorAtual].ImprimirMao();
 		int cartasCompradas = 0;
@@ -178,6 +196,7 @@ void Burro::LoopPartida()
 			
 			Carta cartaComprada = ComprarCartaDoBaralho();
 			jogadores[jogadorAtual].AdicionarCartaNaMao(cartaComprada);
+			
 #ifdef DEBUG_Burro_LoopPartida
 			printf("\nComprando carta: ");
 			cartaComprada.ImprimeCarta();
@@ -226,16 +245,13 @@ void Burro::LoopPartida()
 		
 		if(ChecaFimRodada())
 		{
+			FinalizarRodada(jogadorMaiorCarta);
 			mesa.Limpar();
-			printf("\nO jogador %d venceu a rodada\n", jogadorMaiorCarta + 1);
-			Wait();
-			SetJogadorAtual(jogadorMaiorCarta);
 		}
 		else
 		{
 			MudaJogadorAtual();
 		}
 	
-		IncrementaRodada();
 	}
 }

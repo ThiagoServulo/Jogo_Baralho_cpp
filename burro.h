@@ -26,4 +26,6 @@ public:
 	void LoopPartida();
 	void FimDeJogo(int vencedor);
 	int JogadorComMenosCartas();
+	void ImprimirMesa();
+	void FinalizarRodada(int jogadorVencedorDaRodada);
 };
