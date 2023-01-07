@@ -1,3 +1,10 @@
+/*
+ * @file partida.cpp
+ * @version 1.0
+ * @date 07/01/2023
+ * @author Thiago Sérvulo Guimarães
+ */
+
 using namespace std;
 #include <cstddef> 
 #include <algorithm>
@@ -15,7 +22,9 @@ using namespace std;
 #include "mesa.cpp"
 #include "burro.cpp"
  
-
+/*
+ * @brief Função main, entry point da aplicação
+ */
 int main ()
 {
 	Burro partidaBurro = Burro();

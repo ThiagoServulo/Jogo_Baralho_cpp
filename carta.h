@@ -1,3 +1,9 @@
+/*
+ * @file carta.h
+ * @version 1.0
+ * @date 07/01/2023
+ * @author Thiago Sérvulo Guimarães
+ */
 
 class Carta
 {

@@ -1,6 +1,14 @@
+/*
+ * @file burro.h
+ * @version 1.0
+ * @date 07/01/2023
+ * @author Thiago Sérvulo Guimarães
+ */
+
 class Burro
 {
 private:
+	// Variáveis
 	Baralho cartas;
 	Mesa mesa;
 	int rodadas;
@@ -8,13 +16,7 @@ private:
 	int jogadorAtual;
 	vector<Jogador> jogadores;
 	
-public:
-	Burro();
-	Mesa GetMesa();
-	int GetRodadas();
-	int GetQuantidadeJogadores();
-	Baralho GetBaralho();
-	vector<Jogador> GetJogadores();
+	// Funções
 	void ConfiguraJogo();
 	void InicializaJogadores();
 	void MudaJogadorAtual();
@@ -23,9 +25,12 @@ public:
 	bool ChecaFimRodada();
 	bool ChecaFimJogo();
 	Carta ComprarCartaDoBaralho();
-	void LoopPartida();
 	void FimDeJogo(int vencedor);
 	int JogadorComMenosCartas();
 	void ImprimirMesa();
 	void FinalizarRodada(int jogadorVencedorDaRodada);
+	
+public:
+	Burro();
+	void LoopPartida();
 };

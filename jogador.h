@@ -1,3 +1,9 @@
+/*
+ * @file jogador.h
+ * @version 1.0
+ * @date 07/01/2023
+ * @author Thiago Sérvulo Guimarães
+ */
 
 class Jogador
 {
@@ -9,12 +15,11 @@ private:
 public:
 	Jogador(int num);
 	int GetNumero();
-	Baralho GetMao();
-	void IniciarMao(Baralho b);
+	void IniciarMao(Baralho baralho);
 	void ImprimirMao();
 	Carta JogarCarta(int posicao);
 	int EscolherCartaParaJogar(char naipeMesa);
 	int QuantidadeCartasMao();
 	bool CartaDisponivel(char naipeMesa);
-	void AdicionarCartaNaMao(Carta c);
+	void AdicionarCartaNaMao(Carta carta);
 };

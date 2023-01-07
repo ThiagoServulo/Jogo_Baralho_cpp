@@ -1,3 +1,10 @@
+/*
+ * @file mesa.h
+ * @version 1.0
+ * @date 07/01/2023
+ * @author Thiago Sérvulo Guimarães
+ */
+
 class Mesa
 {
 private:
@@ -7,7 +14,7 @@ private:
 public:
 	Mesa();
 	void Imprimir();
-	void AdicionarCarta(Carta c, int jogador);
+	void AdicionarCarta(Carta carta, int jogador);
 	void Limpar();
 	int QuantidadeCartas();
 	char GetNaipe();

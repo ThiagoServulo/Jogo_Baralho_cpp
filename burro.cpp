@@ -1,5 +1,15 @@
+/*
+ * @file burro.cpp
+ * @version 1.0
+ * @date 04/01/2023
+ * @author Thiago Sérvulo Guimarães
+ */
+ 
 #include "burro.h"
 
+/*
+ * @brief Construtor da classe Burro
+ */
 Burro::Burro()
 {
 	cartas = Baralho();
@@ -9,39 +19,17 @@ Burro::Burro()
 	rodadas = 1;
 }
 
-Mesa Burro::GetMesa()
-{
-	return mesa;
-}
-
-int Burro::GetRodadas()
-{
-	return rodadas;
-}
-
-int Burro::GetQuantidadeJogadores()
-{
-	return quantidadeJogadores;
-}
-
-Baralho Burro::GetBaralho()
-{
-	return cartas;
-}
-
-vector<Jogador> Burro::GetJogadores()
-{
-	return jogadores;
-}
-
+/*
+ * @brief Lê do teclado e configura a quantidade de jogadores na partida
+ */
 void Burro::ConfiguraJogo()
 {
 	while(true)
 	{
 		// Lendo a quantidade de jogadores
-		printf("Escolha a quantidade de jogadores (entre 2 e 4): ");
+		printf("Escolha a quantidade de jogadores (entre %d e %d): ", MIN_JOGADORES, MAX_JOGADORES);
 		scanf("%d", &quantidadeJogadores);
-		if(quantidadeJogadores >= 2 && quantidadeJogadores <= 4)
+		if(quantidadeJogadores >= MIN_JOGADORES && quantidadeJogadores <= MAX_JOGADORES)
 		{
 			InicializaJogadores();
 			break;
@@ -50,6 +38,9 @@ void Burro::ConfiguraJogo()
 	}
 }
 
+/*
+ * @brief Distribui as cartas e inicializa as mãos dos jogadores
+ */
 void Burro::InicializaJogadores()
 {
 	switch(quantidadeJogadores)
@@ -67,7 +58,7 @@ void Burro::InicializaJogadores()
 			
 		default:
 			break;
-			// Lançar excessão;
+			// TODO: Lançar excessão;
 	}
 	
 	reverse(jogadores.begin(), jogadores.end());
@@ -87,37 +78,65 @@ void Burro::InicializaJogadores()
 	}
 }
 
+/*
+ * @brief Muda o jogador atual, seguindo a ordem convencional
+ */
 void Burro::MudaJogadorAtual()
 {
 	jogadorAtual = jogadorAtual == (quantidadeJogadores - 1) ? 0 : ++jogadorAtual;
 }
 
+/*
+ * @brief Muda o jogador atual, setando conforme informado
+ * @param numeroJogador Número do jogador que será setado como atual
+ */
 void Burro::SetJogadorAtual(int numeroJogador)
 {
 	jogadorAtual = numeroJogador;
 }
 
+/*
+ * @brief Incrementa o número de rodadas já jogadas
+ */
 void Burro::IncrementaRodada()
 {
     ++rodadas;
 }
 
+/*
+ * @brief Checa se a rodada chegou ao fim
+ * @return true  - se a rodada estiver concluída
+ *         false - se a rodada ainda não estiver concluída
+ */
 bool Burro::ChecaFimRodada()
 {
 	return (rodadas % quantidadeJogadores) == 0;
 }
 
+/*
+ * @brief Checa se a partida chegou ao fim, analizando a quantidade de cartas que cada jogador possui
+ * @return true  - se a partida estiver concluída
+ *         false - se a partida ainda não estiver concluída
+ */
 bool Burro::ChecaFimJogo()
 {
 	return (jogadores[jogadorAtual].QuantidadeCartasMao() == 0);
 }
 
+/*
+ * @brief Compra uma carta na pilha de compras
+ * @return Retorna a carta comprada
+ */
 Carta Burro::ComprarCartaDoBaralho()
 {
 	Carta c = cartas.RetirarCarta(-1);
 	return c;
 }
 
+/*
+ * @brief Imprime a mensagem de fim de jogo e o jogador vencedor
+ * @param vencedor Número do jogador vencedor
+ */
 void Burro::FimDeJogo(int vencedor)
 {
 	LimparTerminal();
@@ -129,6 +148,10 @@ void Burro::FimDeJogo(int vencedor)
 	printf("\nVencedor: Jogador %d", vencedor);
 }
 
+/*
+ * @brief Verifica e retorna o número do jogador com menos cartas na mão
+ * @return Número do jogador com menos cartas na mão
+ */
 int Burro::JogadorComMenosCartas()
 {
 	int menorQuantidade = 52;
@@ -146,6 +169,9 @@ int Burro::JogadorComMenosCartas()
 	return jogadorMenosCartas;
 }
 
+/*
+ * @brief Imprime as informações da mesa (número da rodada e as cartas já jogadas)
+ */
 void Burro::ImprimirMesa()
 {
 	LimparTerminal();
@@ -154,6 +180,10 @@ void Burro::ImprimirMesa()
 	mesa.Imprimir();
 }
 
+/*
+ * @brief Finaliza a rodada, imprimindo seu vencedor e definindo o jogador atual
+ * @param jogadorVencedorDaRodada Número do jogador que venceu a rodada
+ */
 void Burro::FinalizarRodada(int jogadorVencedorDaRodada)
 {
 	ImprimirMesa();
@@ -162,6 +192,9 @@ void Burro::FinalizarRodada(int jogadorVencedorDaRodada)
 	SetJogadorAtual(jogadorVencedorDaRodada);
 }
 
+/*
+ * @brief Loop da partida, responsável por processar e controlar o fluxo do jogo
+ */
 void Burro::LoopPartida()
 {
 #ifdef DEBUG_Burro_LoopPartida
@@ -173,6 +206,7 @@ void Burro::LoopPartida()
 	int jogadorMaiorCarta = 0;
 	Carta maiorCarta;
 	
+	// Loop do jogo
 	while(true)
 	{
 		ImprimirMesa();
