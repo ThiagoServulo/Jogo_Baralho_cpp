@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['throwjogadoresexception_0',['ThrowJogadoresException',['../excecoes_8cpp.html#a4927d30a88a279d5a031fe8458bd9333',1,'ThrowJogadoresException():&#160;excecoes.cpp'],['../excecoes_8h.html#a4927d30a88a279d5a031fe8458bd9333',1,'ThrowJogadoresException():&#160;excecoes.cpp']]],
+  ['tipos_1',['Tipos',['../utils_8h.html#ac2749d8b73e408604a9ebe45b55989dd',1,'utils.h']]]
+];

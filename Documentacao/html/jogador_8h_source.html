@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jogo Burro: Código-Fonte de jogador.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Jogo Burro<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">jogador.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="jogador_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file jogador.h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @version 1.0</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @date 07/01/2023</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @author Thiago Sérvulo Guimarães</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_jogador.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="class_jogador.html">Jogador</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">int</span> numJogador;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">int</span> quantidadeCartas;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="class_baralho.html">Baralho</a> Mao;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_function" href="class_jogador.html#aaf6a9c89ec3b12ca69566ea32069013f">Jogador</a>(<span class="keywordtype">int</span> num);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_jogador.html#acef8867bfd43e47d9901385fa36e032f">GetNumero</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_jogador.html#ace570170f707f4ec917744a2ce7adb29">IniciarMao</a>(<a class="code hl_class" href="class_baralho.html">Baralho</a> baralho);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_jogador.html#a35bd1a5b91a7b2f4ad718d6b2381591e">ImprimirMao</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_class" href="class_carta.html">Carta</a> <a class="code hl_function" href="class_jogador.html#a13077c762f9f1e6b49975706fe7f1cc3">JogarCarta</a>(<span class="keywordtype">int</span> posicao);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_jogador.html#ab54836088091b7a158f12ebe281a040a">EscolherCartaParaJogar</a>(<span class="keywordtype">char</span> naipeMesa);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_jogador.html#a8994ff4fe718f7dbbebfba620b96edd2">QuantidadeCartasMao</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_jogador.html#a6b5092b900509bf08af9a9c322d3e230">CartaDisponivel</a>(<span class="keywordtype">char</span> naipeMesa);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_jogador.html#a3a5a38d0b9321856d67915bb632a7ee2">AdicionarCartaNaMao</a>(<a class="code hl_class" href="class_carta.html">Carta</a> carta);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
+<div class="ttc" id="aclass_baralho_html"><div class="ttname"><a href="class_baralho.html">Baralho</a></div><div class="ttdef"><b>Definition:</b> baralho.h:9</div></div>
+<div class="ttc" id="aclass_carta_html"><div class="ttname"><a href="class_carta.html">Carta</a></div><div class="ttdef"><b>Definition:</b> carta.h:9</div></div>
+<div class="ttc" id="aclass_jogador_html"><div class="ttname"><a href="class_jogador.html">Jogador</a></div><div class="ttdef"><b>Definition:</b> jogador.h:9</div></div>
+<div class="ttc" id="aclass_jogador_html_a13077c762f9f1e6b49975706fe7f1cc3"><div class="ttname"><a href="class_jogador.html#a13077c762f9f1e6b49975706fe7f1cc3">Jogador::JogarCarta</a></div><div class="ttdeci">Carta JogarCarta(int posicao)</div><div class="ttdef"><b>Definition:</b> jogador.cpp:52</div></div>
+<div class="ttc" id="aclass_jogador_html_a35bd1a5b91a7b2f4ad718d6b2381591e"><div class="ttname"><a href="class_jogador.html#a35bd1a5b91a7b2f4ad718d6b2381591e">Jogador::ImprimirMao</a></div><div class="ttdeci">void ImprimirMao()</div><div class="ttdef"><b>Definition:</b> jogador.cpp:41</div></div>
+<div class="ttc" id="aclass_jogador_html_a3a5a38d0b9321856d67915bb632a7ee2"><div class="ttname"><a href="class_jogador.html#a3a5a38d0b9321856d67915bb632a7ee2">Jogador::AdicionarCartaNaMao</a></div><div class="ttdeci">void AdicionarCartaNaMao(Carta carta)</div><div class="ttdef"><b>Definition:</b> jogador.cpp:117</div></div>
+<div class="ttc" id="aclass_jogador_html_a6b5092b900509bf08af9a9c322d3e230"><div class="ttname"><a href="class_jogador.html#a6b5092b900509bf08af9a9c322d3e230">Jogador::CartaDisponivel</a></div><div class="ttdeci">bool CartaDisponivel(char naipeMesa)</div><div class="ttdef"><b>Definition:</b> jogador.cpp:95</div></div>
+<div class="ttc" id="aclass_jogador_html_a8994ff4fe718f7dbbebfba620b96edd2"><div class="ttname"><a href="class_jogador.html#a8994ff4fe718f7dbbebfba620b96edd2">Jogador::QuantidadeCartasMao</a></div><div class="ttdeci">int QuantidadeCartasMao()</div><div class="ttdef"><b>Definition:</b> jogador.cpp:84</div></div>
+<div class="ttc" id="aclass_jogador_html_aaf6a9c89ec3b12ca69566ea32069013f"><div class="ttname"><a href="class_jogador.html#aaf6a9c89ec3b12ca69566ea32069013f">Jogador::Jogador</a></div><div class="ttdeci">Jogador(int num)</div><div class="ttdef"><b>Definition:</b> jogador.cpp:14</div></div>
+<div class="ttc" id="aclass_jogador_html_ab54836088091b7a158f12ebe281a040a"><div class="ttname"><a href="class_jogador.html#ab54836088091b7a158f12ebe281a040a">Jogador::EscolherCartaParaJogar</a></div><div class="ttdeci">int EscolherCartaParaJogar(char naipeMesa)</div><div class="ttdef"><b>Definition:</b> jogador.cpp:63</div></div>
+<div class="ttc" id="aclass_jogador_html_ace570170f707f4ec917744a2ce7adb29"><div class="ttname"><a href="class_jogador.html#ace570170f707f4ec917744a2ce7adb29">Jogador::IniciarMao</a></div><div class="ttdeci">void IniciarMao(Baralho baralho)</div><div class="ttdef"><b>Definition:</b> jogador.cpp:32</div></div>
+<div class="ttc" id="aclass_jogador_html_acef8867bfd43e47d9901385fa36e032f"><div class="ttname"><a href="class_jogador.html#acef8867bfd43e47d9901385fa36e032f">Jogador::GetNumero</a></div><div class="ttdeci">int GetNumero()</div><div class="ttdef"><b>Definition:</b> jogador.cpp:23</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>
