@@ -57,8 +57,8 @@ void Burro::InicializaJogadores()
 			break;
 			
 		default:
+			ThrowJogadoresException();
 			break;
-			// TODO: Lançar excessão;
 	}
 	
 	reverse(jogadores.begin(), jogadores.end());

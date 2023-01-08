@@ -16,6 +16,7 @@ using namespace std;
 #include <windows.h>
 #include <stdio.h>
 #include "utils.h"
+#include "excecoes.cpp"
 #include "carta.cpp"
 #include "baralho.cpp"
 #include "jogador.cpp"
